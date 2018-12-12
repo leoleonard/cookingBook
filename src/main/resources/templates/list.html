@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"> The Ravenous Book </h1>
+        <hr class="my-4">
+        <p>Share your inspirations with us!</p>
+        <a class="btn btn-primary btn-lg" th:href="@{/add}" role="button">Add a recipe</a>
+    </div>
+    <table th:margin-left="auto" th:margin-right="auto">
+        <thead>
+        <tr>
+            <th>Recipe name</th>
+            <th>Category</th>
+            <th>Cooking time</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tr th:each="recipe:${recipes}">
+            <th><a th:href="@{|/singleRecipe?id=${recipe.id}|}" th:text="|${recipe.recipeName}|"></a></th>
+            <th><a th:text="|${recipe.category}|"></a>
+            <th><a th:text="|${recipe.preparationTime}|"></a>
+            <th><a th:text="|${recipe.description}|"></a>
+    </table>
+    <!--<ul class="list-unstyled"-->
+    <!--th:remove="all-but-first">-->
+    <!--<li class="media" th:each="recipe: ${recipes}">-->
+    <!--<div th:switch="${recipe.name}">-->
+    <!--<img class="mr-3" src="../static/img/tesco.jpg"-->
+    <!--th:src="@{/img/tesco.jpg}"-->
+    <!--th:case="Tesco"-->
+    <!--alt="Generic placeholder image">-->
+    <!--<img class="mr-3" src="../static/img/carrefour.png"-->
+    <!--th:src="@{/img/carrefour.png}"-->
+    <!--th:case="Carrefour"-->
+    <!--alt="Generic placeholder image">-->
+    <!--<img class="mr-3" src="../static/img/kaufland.png"-->
+    <!--th:src="@{/img/kaufland.png}"-->
+    <!--th:case="Kaufland"-->
+    <!--alt="Generic placeholder image">-->
+    <!--<img class="mr-3" src="../static/img/auchan.png"-->
+    <!--th:src="@{/img/auchan.png}"-->
+    <!--th:case="Auchan"-->
+    <!--alt="Generic placeholder image">-->
+    <!--</div>-->
+    <!--<div class="media-body">-->
+    <!--<h5 class="mt-0 mb-1" th:text="${recipe.productName}">Czekolada Milka</h5>-->
+    <!--<p th:text="|Cena przed: ${offer.originalPrice}|">Cena przed: 19.99</p>-->
+    <!--<p th:text="|Cena po: ${offer.discountPrice}|">Cena po: 14.49 </p>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<li class="media my-4">-->
+    <!--<img class="mr-3" src="../static/img/tesco.jpg"-->
+    <!--th:src="@{/img/tesco.jpg}"-->
+    <!--alt="Generic placeholder image">-->
+    <!--<div class="media-body">-->
+    <!--<h5 class="mt-0 mb-1">List-based media object</h5>-->
+    <!--Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus-->
+    <!--odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate-->
+    <!--fringilla. Donec lacinia congue felis in faucibus.-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<li class="media">-->
+    <!--<img class="mr-3" src="../static/img/tesco.jpg"-->
+    <!--th:src="@{/img/tesco.jpg}"-->
+    <!--alt="Generic placeholder image">-->
+    <!--<div class="media-body">-->
+    <!--<h5 class="mt-0 mb-1">List-based media object</h5>-->
+    <!--Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus-->
+    <!--odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate-->
+    <!--fringilla. Donec lacinia congue felis in faucibus.-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ul>-->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
