@@ -50,4 +50,11 @@ public class RecipeRepository {
         return likesCount;
     }
 
+    @Transactional
+    public void incrementLikesCount(Long id) {
+        Recipe recipe = entityManager.find(Recipe.class, id);
+        Integer likesCount = recipe.getLikesCount();
+        recipe.setLikesCount(likesCount+1);
+    }
+
 }

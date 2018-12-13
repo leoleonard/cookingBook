@@ -12,7 +12,8 @@
 
 <section class="page-lvl1">
     <div class="container">
-
+    </div>
+    <div class="parallax parallax-1">
         <div class="row">
             <div class="col-xs-12">
                 <div class="page-lvl1-title">
@@ -21,65 +22,65 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row section3">
+        <div class="container">
 
-        <div class="row section3">
-            <div class="container">
 
-
-                <div class="row">
-                    <div class="container section1">
-                        <div class="row row-flex">
-                            <div class="col-sm-4 col-xs-12 col-left page-lvl2-col-left">
-                                <h1 class="lvl1-dark-bgr-title page-lvl2-title">Add new one!</h1>
-                            </div>
-                            <div class="col-sm-8 col-xs-12 col-right page-lvl2-col-right">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h2 class="sg-lvl1-title page-lvl2">Share with us your unique recipe!</h2>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <p class="sg-lvl1-desc">
-
-                                        <form th:object="${recipe}" method="post" th:action="@{/save}">
-                                            <div class="form-group">
-                                                <label for="recipeName">Recipe name</label>
-                                                <input th:field="*{recipeName}" type="text" class="form-control"
-                                                       id="recipeName"
-                                                       placeholder="Recipe name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="recipeDescription">Recipe description</label>
-                                                <input th:field="*{description}" type="text" class="form-control"
-                                                       id="recipeDescription"
-                                                       placeholder="Describe in a few words your recipe. A few words.">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="category">Recipe category</label>
-                                                <input th:field="*{category}" type="text" class="form-control"
-                                                       id="category"
-                                                       placeholder="Which categry does it fall for?">
-                                                <!-- input selection -->
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="preparationTime">Preparation time</label>
-                                                <input th:field="*{preparationTime}" type="text" class="form-control"
-                                                       id="preparationTime"
-                                                       placeholder="What's the preparation time (minutes)?">
-                                            </div>
-
-                                            <button type="submit" class="btn btn-lvl1-green ">share it!</button>
-                                        </form>
-                                        </p>
-                                    </div>
+            <div class="row">
+                <div class="container section1">
+                    <div class="row row-flex">
+                        <div class="col-sm-4 col-xs-12 col-left page-lvl2-col-left">
+                            <h1 class="lvl1-dark-bgr-title page-lvl2-title">Add new one!</h1>
+                        </div>
+                        <div class="col-sm-8 col-xs-12 col-right page-lvl2-col-right">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="sg-lvl1-title page-lvl2">Share with us your unique recipe!</h2>
                                 </div>
+                                <div class="col-md-12">
+                                    <p class="sg-lvl1-desc">
 
+                                    <form th:object="${recipe}" method="post" th:action="@{/save}">
+                                        <div class="form-group">
+                                            <label for="recipeName">Recipe name</label>
+                                            <input th:field="*{recipeName}" type="text" class="form-control"
+                                                   id="recipeName"
+                                                   placeholder="Recipe name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipeDescription">Recipe description</label>
+                                            <input th:field="*{description}" type="text" class="form-control"
+                                                   id="recipeDescription"
+                                                   placeholder="Describe in a few words your recipe. A few words.">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Recipe category</label>
+                                            <input th:field="*{category}" type="text" class="form-control"
+                                                   id="category"
+                                                   placeholder="Which categry does it fall for?">
+                                            <!-- input selection -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="preparationTime">Preparation time</label>
+                                            <input th:field="*{preparationTime}" type="text" class="form-control"
+                                                   id="preparationTime"
+                                                   placeholder="What's the preparation time (minutes)?">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-lvl1-green ">share it!</button>
+                                    </form>
+                                    </p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
 </section>
 

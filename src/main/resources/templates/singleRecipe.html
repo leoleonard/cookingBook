@@ -11,7 +11,8 @@
 
 <section class="page-lvl1">
     <div class="container">
-
+    </div>
+    <div class="parallax parallax-2">
         <div class="row">
             <div class="col-xs-12">
                 <div class="page-lvl1-title">
@@ -20,7 +21,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
         <div class="row section3">
             <div class="container">
 
@@ -45,8 +46,12 @@
                                         <p th:text="|Meal category: ${recipe.category}|"></p>
                                         <h2 th:text="|Popularity: ${recipe.likesCount}|"></h2>
 
-                                        <a class="btn btn-lvl1-green " th:href="@{/add}" role="button">props!</a>
-                                        <a class="btn btn-lvl1-green " th:href="@{/}" role="button">come back</a>
+                                        <!--offerRepository.incrementViews(offerId);-->
+                                        <button type="submit" class="btn-lvl1-green" name="button" id="1"
+                                                th:value="${recipe.setLikesCount(recipe.getLikesCount()+1)}">props!</button>
+
+                                        <!--<a class="btn btn-lvl1-green" th:href="@{/add}" role="button">props!</a>-->
+                                        <a class="btn btn-lvl1-green" th:href="@{/}" role="button">come back</a>
                                         </p>
                                     </div>
                                 </div>
