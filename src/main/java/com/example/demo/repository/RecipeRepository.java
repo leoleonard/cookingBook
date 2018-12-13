@@ -32,7 +32,22 @@ public class RecipeRepository {
         return entityManager.find(Recipe.class, id);
     }
 
+    @Transactional
+    public void deleteRecipe(Recipe recipe) {
+        entityManager.remove(recipe);
+    }
 
+//    public List<Recipe> sortByCategory(String category) {
+//        String jpql = "select r from Recipe where category= :category";
+//        TypedQuery<Recipe> query = entityManager.createQuery(jpql, Recipe.class);
+//        List<Recipe> recipesByCategory = query.getResultList();
+//        return recipesByCategory;
+//    }
 
+    @Transactional
+    public int likesCount(int likesCount){
+        likesCount++;
+        return likesCount;
+    }
 
 }

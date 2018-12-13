@@ -42,7 +42,7 @@ public class RecipeController {
     //zapisanie danych z formularza
     //przekierowanie na stronę głowna
 
-    //localhost:8080/recipe?recipeId=2
+    // localhost:8080/recipe?recipeId=2
     @GetMapping("/recipe")
     public String singleRecipe(@RequestParam Long recipeId, Model model) {
         Recipe recipe = recipeRepository.findById(recipeId);

@@ -13,7 +13,10 @@
     <p th:text="${recipe.description}"></p>
     <p th:text="${recipe.preparationTime}"></p>
     <p th:text="${recipe.category}"></p>
-    <h2 th:text="${recipe.likesCount}">>Ilość polubień: 0</h2>
+    <h2 th:text="${recipe.likesCount}">Ilość polubień: 0</h2>
+
+    <!--<button type="submit" class="btn btn-success" name="button" id="1"-->
+            <!--th:value="${recipe.setLikesCount(recipe.getLikesCount()+1)}">I'm a fan!</button>-->
 
 </div>
 

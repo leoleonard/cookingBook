@@ -24,7 +24,7 @@
         </tr>
         </thead>
         <tr th:each="recipe:${recipes}">
-            <th><a th:href="@{|/singleRecipe?id=${recipe.id}|}" th:text="|${recipe.recipeName}|"></a></th>
+            <th><a th:href="@{|/recipe?recipeId=${recipe.id}|}" th:text="|${recipe.recipeName}|"></a></th>
             <th><a th:text="|${recipe.category}|"></a>
             <th><a th:text="|${recipe.preparationTime}|"></a>
             <th><a th:text="|${recipe.description}|"></a>

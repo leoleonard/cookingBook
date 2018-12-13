@@ -15,13 +15,13 @@ public class Recipe {
     private String recipeName;
     private String category;
     private String description;
-    private Integer preparationTime;
-    private Double likesCount;
+    private Double preparationTime;
+    private Integer likesCount;
 
     public Recipe() {
     }
 
-    public Recipe(String recipeName, String category, String description, Integer preparationTime, Double likesCount) {
+    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
         this.recipeName = recipeName;
         this.category = category;
         this.description = description;
@@ -61,19 +61,19 @@ public class Recipe {
         this.description = description;
     }
 
-    public Integer getPreparationTime() {
+    public Double getPreparationTime() {
         return preparationTime;
     }
 
-    public void setPreparationTime(Integer preparationTime) {
+    public void setPreparationTime(Double preparationTime) {
         this.preparationTime = preparationTime;
     }
 
-    public Double getLikesCount() {
+    public Integer getLikesCount() {
         return likesCount;
     }
 
-    public void setLikesCount(Double likesCount) {
+    public void setLikesCount(Integer likesCount) {
         this.likesCount = likesCount;
     }
 }
