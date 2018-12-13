@@ -188,6 +188,15 @@ main { padding:0px!important }
     color: #fff !important;
     margin: 30px 0px 0px 0px;
 }
+.parallax {
+    background-image: url("img/bread-color.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 /* SG */
 
@@ -463,6 +472,7 @@ main { padding:0px!important }
     font-weight: 700;
     line-height: 60px;
     letter-spacing: 1.2px;
+    margin-top: 170px;
 }
 
 .page-lvl1-title p {
@@ -600,3 +610,4 @@ table>thead>tr>th {
 table a {
     color: rgb(51, 51, 51);
 }
+
