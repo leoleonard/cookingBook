@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.text.html.Option;
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class RecipeController {
@@ -39,14 +42,39 @@ public class RecipeController {
         recipeRepository.save(recipe);
         return "redirect:/";
     }
-    //zapisanie danych z formularza
-    //przekierowanie na stronę głowna
 
     // localhost:8080/recipe?recipeId=2
     @GetMapping("/recipe")
     public String singleRecipe(@RequestParam Long recipeId, Model model) {
-        Recipe recipe = recipeRepository.findById(recipeId);
-        model.addAttribute("recipe", recipe);
-        return "singleRecipe";
+            Recipe recipe = recipeRepository.findById(recipeId);
+            model.addAttribute("recipe", recipe);
+            return "singleRecipe";
     }
+
+    @GetMapping("/delete")
+    public String deleteById(@RequestParam Long id) {
+        recipeRepository.deleteRecipe(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit")
+    public String editForm(Model model, @RequestParam Long id) {
+        Recipe optional = recipeRepository.findById(id);
+            String description = optional.getDescription();
+            Double preparationTime = optional.getPreparationTime();
+            model.addAttribute("description", description);
+            model.addAttribute("prepratationTime", preparationTime);
+            return "edit";
+    }
+
+
+    @PostMapping("/edit")
+    public String edit(Recipe recipe) {
+        recipeRepository.save(recipe);
+        return "redirect:/";
+    }
+
+
+
+
 }

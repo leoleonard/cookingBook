@@ -1,33 +1,14 @@
-package com.example.demo.model;
+package com.example.demo.controller;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class RecipeDto {
 
-@Entity
-public class Recipe {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String recipeName;
     private String category;
     private String description;
     private Double preparationTime;
     private Integer likesCount;
 
-    public Recipe() {
-    }
-
-    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
-        this.recipeName = recipeName;
-        this.category = category;
-        this.description = description;
-        this.preparationTime = preparationTime;
-        this.likesCount = likesCount;
-    }
 
     public Long getId() {
         return id;
@@ -76,5 +57,4 @@ public class Recipe {
     public void setLikesCount(Integer likesCount) {
         this.likesCount = likesCount;
     }
-
 }

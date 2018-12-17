@@ -2,6 +2,8 @@ package com.example.demo.repository;
 
 import com.example.demo.model.Recipe;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,7 +11,7 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Controller
+@Repository
 public class RecipeRepository {
 
     @PersistenceContext
@@ -19,33 +21,29 @@ public class RecipeRepository {
     public void save(Recipe recipe) {
         entityManager.persist(recipe);
     }
-    //przekazanie obiektu do zapisania
 
     public List<Recipe> findAll() {
         String jpql = "select r from Recipe r";
         TypedQuery<Recipe> query = entityManager.createQuery(jpql, Recipe.class);
         return query.getResultList();
     }
-    //zwrócenie wszystich rekordów
 
+    @Transactional
     public Recipe findById(Long id) {
         return entityManager.find(Recipe.class, id);
     }
 
     @Transactional
-    public void deleteRecipe(Recipe recipe) {
-        entityManager.remove(recipe);
-    }
-
-//    public List<Recipe> sortByCategory(String category) {
-//        String jpql = "select r from Recipe where category= :category";
+    public String deleteRecipe(@RequestParam Long id) {
+//        String jpql = "delete r from Recipe r where id=?";
 //        TypedQuery<Recipe> query = entityManager.createQuery(jpql, Recipe.class);
-//        List<Recipe> recipesByCategory = query.getResultList();
-//        return recipesByCategory;
-//    }
+        entityManager.remove(id);
+        return "redirect:/";
+    }
+    
 
     @Transactional
-    public int likesCount(int likesCount){
+    public int likesCount(int likesCount) {
         likesCount++;
         return likesCount;
     }
@@ -54,7 +52,9 @@ public class RecipeRepository {
     public void incrementLikesCount(Long id) {
         Recipe recipe = entityManager.find(Recipe.class, id);
         Integer likesCount = recipe.getLikesCount();
-        recipe.setLikesCount(likesCount+1);
+        recipe.setLikesCount(likesCount + 1);
     }
 
+
 }
+

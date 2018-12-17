@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Receipe list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="parallax">
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-lvl1-title">
+                <h2 class="page-lvl1-title-h">The ravenous book</h2>
+                <p>Welcome to the modern cooking book!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="/edit" method="post" th:object="${recipe}">
+
+    <input type="hidden" th:field="*{id}"/><br/>
+    <input type="text" th:field="*{description}"/><br/>
+    <input type="text" th:field="*{preparationTime}"/><br/>
+    <br/>
+
+    <input type="submit" value="Zapisz zmiany"/>
+
+</form>
+
+</body>
+</html>
