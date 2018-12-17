@@ -28,14 +28,12 @@ public class RecipeController {
         model.addAttribute("recipes", all);
         return "list";
     }
-    //zwrocenie listy przepisow
 
     @GetMapping("/add")
     public String showForm(Model model) {
         model.addAttribute("recipe", new Recipe());
         return "addRecipe";
     }
-    //formularz dodania nowego przepisu
 
     @PostMapping("/save")
     public String saveRecipe(Recipe recipe) {
@@ -53,9 +51,10 @@ public class RecipeController {
 
     @GetMapping("/delete")
     public String deleteById(@RequestParam Long id) {
-        recipeRepository.deleteRecipe(id);
+        recipeRepository.removeRecipe(recipeRepository.findById(Long.valueOf(id)));
         return "redirect:/";
     }
+
 
     @GetMapping("/edit")
     public String editForm(Model model, @RequestParam Long id) {
@@ -66,7 +65,6 @@ public class RecipeController {
             model.addAttribute("prepratationTime", preparationTime);
             return "edit";
     }
-
 
     @PostMapping("/edit")
     public String edit(Recipe recipe) {

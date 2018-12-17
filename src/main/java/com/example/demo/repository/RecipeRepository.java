@@ -34,19 +34,11 @@ public class RecipeRepository {
     }
 
     @Transactional
-    public String deleteRecipe(@RequestParam Long id) {
-//        String jpql = "delete r from Recipe r where id=?";
-//        TypedQuery<Recipe> query = entityManager.createQuery(jpql, Recipe.class);
-        entityManager.remove(id);
+    public String removeRecipe(Recipe recipe) {
+        entityManager.remove(recipe);
         return "redirect:/";
     }
-    
 
-    @Transactional
-    public int likesCount(int likesCount) {
-        likesCount++;
-        return likesCount;
-    }
 
     @Transactional
     public void incrementLikesCount(Long id) {

@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Recipe {
@@ -11,23 +8,23 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String recipeName;
     private String category;
     private String description;
     private Double preparationTime;
     private Integer likesCount;
+    private String describedRecipe;
 
     public Recipe() {
     }
 
-    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
-        this.recipeName = recipeName;
-        this.category = category;
-        this.description = description;
-        this.preparationTime = preparationTime;
-        this.likesCount = likesCount;
-    }
+//    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
+//        this.recipeName = recipeName;
+//        this.category = category;
+//        this.description = description;
+//        this.preparationTime = preparationTime;
+//        this.likesCount = likesCount;
+//    }
 
     public Long getId() {
         return id;
@@ -45,12 +42,12 @@ public class Recipe {
         this.recipeName = recipeName;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
     }
 
     public String getDescription() {
@@ -77,4 +74,11 @@ public class Recipe {
         this.likesCount = likesCount;
     }
 
+    public String getDescribedRecipe() {
+        return describedRecipe;
+    }
+
+    public void setDescribedRecipe(String describedRecipe) {
+        this.describedRecipe = describedRecipe;
+    }
 }
