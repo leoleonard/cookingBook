@@ -1,5 +1,5 @@
 insert into recipe(recipe_name, category, description, preparation_time, likes_count, described_recipe)
-  values("carrots and ginger", "lunch", "light, makes you happy", 120, 12, "blend chopped carrots with a pinch of ginger, then heat it up and wait till bolidng; ready!"),
+  values("carrots and ginger", "lunch", "light, makes you happy", 120, 12, "blend chopped carrots with a pinch of ginger, then heat it up and wait till boilling; ready!"),
           ("catch up with friends", "breakfast", "crossaints, jam, coffee and plenty of laugh", 10, 9, "feeling hungover? got yourself and your folks crossaints covered with a big smash of jam, coffee with extra sugar and spicy stories to tell about your last night"),
           ("green chicken curry", "dinner", "chicken, herbs, coconut milk stirred with love", 30, 3, "never let the curry paste to burn, add chicken, chopped vegs and one jar of coconut milk at the very end; serve with love"),
           ("sweet cheat", "snack", "sweet potatatoes and rosmaryn", 45, 4, "chop them precisely, add some thymeleaf, garlic, then bake them for 40min in 220C and THEN eat them like there's no tomorrow!");

@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 public class Recipe {
@@ -15,8 +16,6 @@ public class Recipe {
     private Integer likesCount;
     private String describedRecipe;
 
-    public Recipe() {
-    }
 
 //    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
 //        this.recipeName = recipeName;
@@ -25,6 +24,8 @@ public class Recipe {
 //        this.preparationTime = preparationTime;
 //        this.likesCount = likesCount;
 //    }
+
+
 
     public Long getId() {
         return id;

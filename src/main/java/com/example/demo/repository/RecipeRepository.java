@@ -39,6 +39,11 @@ public class RecipeRepository {
         return "redirect:/";
     }
 
+    @Transactional
+    public void updateRecipe(Recipe recipe) {
+        entityManager.merge(recipe);
+    }
+
 
     @Transactional
     public void incrementLikesCount(Long id) {

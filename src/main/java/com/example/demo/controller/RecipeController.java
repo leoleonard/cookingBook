@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.swing.text.html.Option;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,13 +55,11 @@ public class RecipeController {
 
 
     @GetMapping("/edit")
-    public String editForm(Model model, @RequestParam Long id) {
-        Recipe optional = recipeRepository.findById(id);
-            String description = optional.getDescription();
-            Double preparationTime = optional.getPreparationTime();
-            model.addAttribute("description", description);
-            model.addAttribute("prepratationTime", preparationTime);
-            return "edit";
+    public String showForm(Model model, @RequestParam Long id) {
+        Recipe recipe = recipeRepository.findById(Long.valueOf(id));
+        model.addAttribute("recipe", recipe);
+//        recipeRepository.updateRecipe(recipe);
+        return "edit";
     }
 
     @PostMapping("/edit")

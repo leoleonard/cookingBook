@@ -1,38 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Receipe list</title>
+    <title>Single recipe</title>
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<div class="parallax">
 
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="page-lvl1-title">
-                <h2 class="page-lvl1-title-h">The ravenous book</h2>
-                <p>Welcome to the modern cooking book!</p>
+<section class="page-lvl1">
+    <div class="container">
+    </div>
+    <div class="parallax parallax-2">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-lvl1-title">
+                    <h2 class="page-lvl1-title-h">The ravenous book</h2>
+                    <p>Bare in mind you are editing the recipe now!</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="row section3">
+        <div class="container">
 
-<form action="/edit" method="post" th:object="${recipe}">
 
-    <input type="hidden" th:field="*{id}"/><br/>
-    <input type="text" th:field="*{description}"/><br/>
-    <input type="text" th:field="*{preparationTime}"/><br/>
-    <br/>
+            <div class="row">
+                <div class="container section1">
+                    <div class="row row-flex">
+                        <div class="col-sm-4 col-xs-12 col-left page-lvl2-col-left">
+                            <h1 class="lvl1-dark-bgr-title page-lvl2-title" th:text="${recipe.recipeName}">Recipe
+                                name</h1>
+                        </div>
+                        <div class="col-sm-8 col-xs-12 col-right page-lvl2-col-right">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="sg-lvl1-title page-lvl2">Edit the recipe</h2>
+                                </div>
+                                <div class="col-md-12">
 
-    <input type="submit" value="Zapisz zmiany"/>
+                                    <form action="/edit" method="post" th:object="${recipe}">
+                                        <div class="form-group">
+                                            <input type="hidden" th:field="*{id}"/><br/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipeName">Recipe description</label>
+                                            <input th:field="*{description}" type="text" class="form-control"
+                                                   id="recipeName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="preparationTime">Preparation time</label>
+                                            <input th:field="*{preparationTime}" type="text" class="form-control"
+                                                   id="preparationTime">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Category</label>
+                                            <input th:field="*{category}" type="text" class="form-control"
+                                                   id="category">
+                                        </div>
 
-</form>
 
+                                        <button type="submit" class="btn btn-lvl1-green ">save</button>
+                                        <a class="btn btn-lvl1-green " th:href="@{/}" role="button">come back</a>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html>
