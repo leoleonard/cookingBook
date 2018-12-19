@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Single recipe</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="../static/styles.css/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -38,7 +39,7 @@
                                 <div class="col-md-12">
                                     <h2 class="sg-lvl1-title page-lvl2">Here's your chosen recipe!</h2>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 desc-container">
                                     <p class="sg-lvl1-desc">
 
                                     <p th:text="|What have we got here: ${recipe.description}|"></p>
@@ -50,18 +51,22 @@
                                     <div th:switch="${recipe.category}">
                                         <img class="category-picture" src="../static/img/breakfast.jpg"
                                              th:src="@{/img/breakfast.jpg}"
+                                             style="width: 200px"
                                              th:case="breakfast"
                                              alt="Generic placeholder image">
                                         <img class="category-picture" src="../static/img/snack.jpg"
                                              th:src="@{/img/snack.jpg}"
+                                             style="width: 200px"
                                              th:case="snack"
                                              alt="Generic placeholder image">
                                         <img class="category-picture" src="../static/img/lunch.jpg"
                                              th:src="@{/img/lunch.jpg}"
+                                             style="width: 200px"
                                              th:case="lunch"
                                              alt="Generic placeholder image">
                                         <img class="category-picture" src="../static/img/dinner.jpg"
                                              th:src="@{/img/dinner.jpg}"
+                                             style="width: 200px"
                                              th:case="dinner"
                                              alt="Generic placeholder image">
                                     </div>
