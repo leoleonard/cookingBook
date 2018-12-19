@@ -60,7 +60,7 @@ public class RecipeController {
     public String showForm(Model model, @RequestParam Long id) {
         Recipe recipe = recipeRepository.findById(Long.valueOf(id));
         model.addAttribute("recipe", recipe);
-//        recipeRepository.updateRecipe(recipe);
+        recipeRepository.updateRecipe(recipe);
         return "edit";
     }
 

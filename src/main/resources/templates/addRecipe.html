@@ -67,6 +67,19 @@
                                                    id="preparationTime"
                                                    placeholder="What's the preparation time (minutes)?">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="likesCount">Popularity</label>
+                                            <input th:field="*{likesCount}" type="text" class="form-control"
+                                                   id="likesCount"
+                                                   placeholder="How many likes would you give?">
+                                        </div>
+                                    <div class="form-group">
+                                        <label for="fulldesc">Preparation instruction</label>
+                                        <input th:field="*{describedRecipe}" type="text" class="form-control"
+                                               id="fulldesc"
+                                               placeholder="How we can make it work?">
+                                    </div>
+
 
                                         <button type="submit" class="btn btn-lvl1-green ">share it!</button>
                                     </form>

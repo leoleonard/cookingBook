@@ -134,11 +134,13 @@
                                                     <th><a th:text="|${recipe.description}|"></a>
                                                     <th>
                                                     <td>
+                                                  <!--th:href="@{/edytujPrzepis(id=${przepis.id})}"-->
                                                         <a th:href="'/edit?id=' + ${recipe.id}">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
+
                                                         <a th:href="'/delete?id=' + ${recipe.id}">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
