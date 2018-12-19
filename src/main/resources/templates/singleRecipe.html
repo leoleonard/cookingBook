@@ -47,6 +47,26 @@
                                     <p th:text="|How to make it: ${recipe.describedRecipe}|"></p>
                                     <p th:text="|Popularity: ${recipe.likesCount}|"></p>
 
+                                    <div th:switch="${recipe.category}">
+                                        <img class="category-picture" src="../static/img/breakfast.jpg"
+                                             th:src="@{/img/breakfast.jpg}"
+                                             th:case="breakfast"
+                                             alt="Generic placeholder image">
+                                        <img class="category-picture" src="../static/img/snack.jpg"
+                                             th:src="@{/img/snack.jpg}"
+                                             th:case="snack"
+                                             alt="Generic placeholder image">
+                                        <img class="category-picture" src="../static/img/lunch.jpg"
+                                             th:src="@{/img/lunch.jpg}"
+                                             th:case="lunch"
+                                             alt="Generic placeholder image">
+                                        <img class="category-picture" src="../static/img/dinner.jpg"
+                                             th:src="@{/img/dinner.jpg}"
+                                             th:case="dinner"
+                                             alt="Generic placeholder image">
+                                    </div>
+
+
                                     <a class="btn btn-lvl1-green" th:href="@{/}" role="button">come back</a>
 
 

@@ -623,3 +623,20 @@ table a {
     color: rgb(51, 51, 51);
 }
 
+.category-picture  {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    width: 200px;
+    overflow: hidden;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.category-picture:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
