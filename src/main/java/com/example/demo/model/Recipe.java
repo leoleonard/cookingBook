@@ -17,16 +17,6 @@ public class Recipe {
     private String describedRecipe;
 
 
-//    public Recipe(String recipeName, String category, String description, Double preparationTime, Integer likesCount) {
-//        this.recipeName = recipeName;
-//        this.category = category;
-//        this.description = description;
-//        this.preparationTime = preparationTime;
-//        this.likesCount = likesCount;
-//    }
-
-
-
     public Long getId() {
         return id;
     }

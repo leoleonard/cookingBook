@@ -48,6 +48,15 @@
                                     <p th:text="|Popularity: ${recipe.likesCount}|"></p>
 
                                     <a class="btn btn-lvl1-green" th:href="@{/}" role="button">come back</a>
+
+
+                                    <div class="likeButton">
+                                        <form th:action="@{|/likeRecipe/${recipe.getId()}|}" method="post">
+                                            <button type="submit" class="btn btn-lvl1-green"th:text="|Like it (${recipe.likesCount})|">like</button>
+                                        </form>
+                                    </div>
+
+
                                     </p>
                                 </div>
                             </div>
