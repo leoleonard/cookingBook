@@ -644,3 +644,17 @@ img.category-picture:hover {
     transform: scale(1.5);
 }
 
+a.recipte-title {
+    color: green;
+}
+
+a:focus, a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+a.recipte-title:focus, a.recipte-title:hover {
+    color: #56b81b;
+    text-decoration: underline;
+}
+

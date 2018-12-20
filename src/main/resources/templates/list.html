@@ -128,7 +128,7 @@
                                                 </thead>
                                                 <tr th:each="recipe:${recipes}">
                                                     <th><a th:href="@{|/recipe?recipeId=${recipe.id}|}"
-                                                           th:text="|${recipe.recipeName}|"></a></th>
+                                                           th:text="|${recipe.recipeName}|" class="recipte-title"></a></th>
                                                     <th><a th:text="|${recipe.category}|"></a>
                                                     <th><a th:text="|${recipe.preparationTime}|"></a>
                                                     <th><a th:text="|${recipe.description}|"></a>
@@ -178,6 +178,7 @@
                                         <div class="col-md-12">
                                             <p class="sg-lvl1-desc"> Choose your recipies by categories!</p>
                                         </div>
+
                                         <a class="btn btn-lvl1-green " th:href="@{/}" role="button">come back</a>
                                     </div>
 

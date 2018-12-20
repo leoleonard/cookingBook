@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
@@ -16,6 +17,10 @@ public class Recipe {
     private Integer likesCount;
     private String describedRecipe;
 
+    @ManyToMany(cascade=CascadeType.PERSIST)
+
+    private List<Category> categories;
+    
 
     public Long getId() {
         return id;
